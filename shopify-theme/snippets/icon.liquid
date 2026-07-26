@@ -1,0 +1,82 @@
+{%- comment -%}
+  Usage: {% render 'icon', name: 'check', size: 24 %}
+  Professional line-icon set (stroke-based, currentColor) — matches brand spec
+  "professional line icons." Extend the case statement to add more.
+{%- endcomment -%}
+{%- liquid
+  assign size = size | default: 24
+-%}
+<svg class="icon icon--{{ name }}" width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+{%- case name -%}
+  {%- when 'check' -%}
+    <polyline points="20 6 9 17 4 12"></polyline>
+  {%- when 'check-circle' -%}
+    <circle cx="12" cy="12" r="10"></circle><polyline points="8 12 11 15 16 9"></polyline>
+  {%- when 'target' -%}
+    <circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle>
+  {%- when 'clock' -%}
+    <circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15.5 14"></polyline>
+  {%- when 'shield' -%}
+    <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"></path>
+  {%- when 'briefcase' -%}
+    <rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+  {%- when 'chart' -%}
+    <path d="M4 20V10"></path><path d="M11 20V4"></path><path d="M18 20v-7"></path>
+  {%- when 'linkedin' -%}
+    <rect x="3" y="3" width="18" height="18" rx="3"></rect><line x1="8" y1="10" x2="8" y2="16"></line><circle cx="8" cy="7" r="0.6" fill="currentColor"></circle><path d="M12 16v-3.5a2.2 2.2 0 0 1 4.4 0V16"></path><line x1="12" y1="10" x2="12" y2="16"></line>
+  {%- when 'file-text' -%}
+    <path d="M6 3h8l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"></path><line x1="8" y1="12" x2="16" y2="12"></line><line x1="8" y1="16" x2="16" y2="16"></line>
+  {%- when 'users' -%}
+    <circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M15.5 14a5.5 5.5 0 0 1 5.5 6"></path>
+  {%- when 'award' -%}
+    <circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5L7 21l5-3 5 3-1.5-8.5"></path>
+  {%- when 'star' -%}
+    <path d="M12 3l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L12 16.9 6.4 20.1l1.4-6.3-4.8-4.3 6.4-.6z"></path>
+  {%- when 'arrow-right' -%}
+    <line x1="4" y1="12" x2="20" y2="12"></line><polyline points="13 5 20 12 13 19"></polyline>
+  {%- when 'mail' -%}
+    <rect x="3" y="5" width="18" height="14" rx="2"></rect><polyline points="3 7 12 13 21 7"></polyline>
+  {%- when 'phone' -%}
+    <path d="M6 3h3l1.5 5-2 1.5a12 12 0 0 0 6 6l1.5-2 5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"></path>
+  {%- when 'map-pin' -%}
+    <path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.3"></circle>
+  {%- when 'chevron-down' -%}
+    <polyline points="6 9 12 15 18 9"></polyline>
+  {%- when 'menu' -%}
+    <line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  {%- when 'cart' -%}
+    <circle cx="9" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle><path d="M3 4h2l2.7 12.4a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 8H6.2"></path>
+  {%- when 'search' -%}
+    <circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line>
+  {%- when 'code' -%}
+    <polyline points="8 6 3 12 8 18"></polyline><polyline points="16 6 21 12 16 18"></polyline>
+  {%- when 'stethoscope' -%}
+    <path d="M6 4v6a4 4 0 0 0 8 0V4"></path><path d="M18 10v2a6 6 0 0 1-12 0v-1"></path><circle cx="19" cy="8.5" r="1.6"></circle>
+  {%- when 'building' -%}
+    <rect x="4" y="3" width="16" height="18" rx="1"></rect><line x1="8" y1="7" x2="8" y2="7.01"></line><line x1="12" y1="7" x2="12" y2="7.01"></line><line x1="16" y1="7" x2="16" y2="7.01"></line><line x1="8" y1="11" x2="8" y2="11.01"></line><line x1="12" y1="11" x2="12" y2="11.01"></line><line x1="16" y1="11" x2="16" y2="11.01"></line><line x1="9" y1="21" x2="9" y2="17"></line><line x1="15" y1="21" x2="15" y2="17"></line>
+  {%- when 'wrench' -%}
+    <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2-2z"></path>
+  {%- when 'megaphone' -%}
+    <path d="M3 11v2a2 2 0 0 0 2 2h1l1 5h2l-1-5h4l6 4V7l-6 4H6a2 2 0 0 0-2 2z"></path>
+  {%- when 'trending-up' -%}
+    <polyline points="3 17 9 11 13 15 21 6"></polyline><polyline points="15 6 21 6 21 12"></polyline>
+  {%- when 'graduation-cap' -%}
+    <path d="M2 9l10-4 10 4-10 4-10-4z"></path><path d="M6 11v4c0 1.7 2.7 3 6 3s6-1.3 6-3v-4"></path>
+  {%- when 'scale' -%}
+    <line x1="12" y1="3" x2="12" y2="21"></line><path d="M5 8l-3 6a3.5 3.5 0 0 0 6 0z"></path><path d="M19 8l-3 6a3.5 3.5 0 0 0 6 0z"></path><line x1="5" y1="8" x2="19" y2="8"></line><line x1="9" y1="21" x2="15" y2="21"></line>
+  {%- when 'utensils' -%}
+    <path d="M7 3v6a2 2 0 0 0 2 2v10"></path><line x1="7" y1="3" x2="7" y2="8"></line><path d="M17 3c-1.7 0-3 2-3 5s1.3 5 3 5v8"></path>
+  {%- when 'shopping-bag' -%}
+    <path d="M6 8h12l-1 12H7z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
+  {%- when 'globe' -%}
+    <circle cx="12" cy="12" r="9"></circle><line x1="3" y1="12" x2="21" y2="12"></line><path d="M12 3a14 14 0 0 1 0 18"></path><path d="M12 3a14 14 0 0 0 0 18"></path>
+  {%- when 'crown' -%}
+    <path d="M3 8l4 3 5-6 5 6 4-3-2 10H5z"></path>
+  {%- when 'lock' -%}
+    <rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path>
+  {%- when 'thumbs-up' -%}
+    <path d="M7 11v9H4v-9z"></path><path d="M7 11l4-7a2 2 0 0 1 2 2v4h5a2 2 0 0 1 2 2.2l-1.2 6A2 2 0 0 1 17 20H7"></path>
+  {%- else -%}
+    <circle cx="12" cy="12" r="9"></circle>
+{%- endcase -%}
+</svg>

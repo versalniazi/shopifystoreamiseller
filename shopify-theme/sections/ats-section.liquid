@@ -1,0 +1,57 @@
+<section class="ats-section page-width" id="ats">
+  <div class="ats-section__grid">
+    <div class="ats-section__content">
+      {% if section.settings.eyebrow != blank %}<span class="eyebrow">{{ section.settings.eyebrow }}</span>{% endif %}
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.text }}</p>
+      <ul class="ats-section__checklist">
+        {% for block in section.blocks %}
+          <li>{% render 'icon', name: 'check-circle', size: 18 %} <span>{{ block.settings.item }}</span></li>
+        {% endfor %}
+      </ul>
+      <a href="{{ section.settings.cta_link }}" class="button button--primary">{{ section.settings.cta_text | default: 'Get an ATS-Optimized Resume' }}</a>
+    </div>
+    <div class="ats-section__media">
+      {% if section.settings.image %}
+        <img src="{{ section.settings.image | image_url: width: 900 }}" alt="{{ section.settings.image.alt | default: 'ATS resume scan illustration' }}" width="{{ section.settings.image.width }}" height="{{ section.settings.image.height }}" loading="lazy">
+      {% else %}
+        <div class="ats-section__media-placeholder">{% render 'icon', name: 'target', size: 56 %}</div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ATS section",
+  "tag": "section",
+  "class": "section-ats",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "ATS Explained" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What Is an ATS — and Why It Decides If You Get Seen" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Most companies use Applicant Tracking Systems (ATS) to scan, sort, and rank resumes before a human ever opens one. A resume with the wrong format or missing keywords can be filtered out automatically — regardless of how qualified you are. We build every resume to be read cleanly by ATS software and by the recruiter who reviews it next." },
+    { "type": "text", "id": "cta_text", "label": "CTA text", "default": "Get an ATS-Optimized Resume" },
+    { "type": "url", "id": "cta_link", "label": "CTA link" },
+    { "type": "image_picker", "id": "image", "label": "Image" }
+  ],
+  "blocks": [
+    {
+      "type": "checklist_item",
+      "name": "Checklist item",
+      "settings": [
+        { "type": "text", "id": "item", "label": "Item", "default": "Clean, ATS-readable formatting (no tables, columns, or graphics that break parsing)" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "checklist_item", "settings": { "item": "Clean, ATS-readable formatting — no tables, text boxes, or graphics that break parsing" } },
+      { "type": "checklist_item", "settings": { "item": "Keywords matched to your target job title and industry" } },
+      { "type": "checklist_item", "settings": { "item": "Standard section headings ATS software recognizes (Experience, Education, Skills)" } },
+      { "type": "checklist_item", "settings": { "item": "Consistent date formatting and file naming" } },
+      { "type": "checklist_item", "settings": { "item": "Saved in both ATS-safe Word format and a recruiter-ready PDF" } }
+    ]
+  },
+  "presets": [{ "name": "ATS section" }]
+}
+{% endschema %}

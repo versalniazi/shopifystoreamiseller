@@ -1,0 +1,40 @@
+<section class="image-with-text page-width {% if section.settings.layout == 'reverse' %}image-with-text--reverse{% endif %}">
+  <div class="image-with-text__media">
+    {% if section.settings.image %}
+      <img src="{{ section.settings.image | image_url: width: 900 }}" alt="{{ section.settings.image.alt | default: section.settings.heading }}" width="{{ section.settings.image.width }}" height="{{ section.settings.image.height }}" loading="lazy">
+    {% else %}
+      <div class="image-with-text__placeholder">{% render 'icon', name: section.settings.icon, size: 48 %}</div>
+    {% endif %}
+  </div>
+  <div class="image-with-text__content">
+    {% if section.settings.eyebrow != blank %}<span class="eyebrow">{{ section.settings.eyebrow }}</span>{% endif %}
+    <h2>{{ section.settings.heading }}</h2>
+    <div>{{ section.settings.text }}</div>
+    {% if section.settings.cta_text != blank %}
+      <a href="{{ section.settings.cta_link }}" class="button button--primary">{{ section.settings.cta_text }}</a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image with text",
+  "tag": "section",
+  "class": "section-image-with-text",
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "default", "options": [
+      { "value": "default", "label": "Image left" }, { "value": "reverse", "label": "Image right" }
+    ]},
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "select", "id": "icon", "label": "Placeholder icon", "default": "briefcase", "options": [
+      { "value": "briefcase", "label": "Briefcase" }, { "value": "target", "label": "Target" }, { "value": "users", "label": "Users" }, { "value": "award", "label": "Award" }
+    ]},
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our Mission" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Add your content here.</p>" },
+    { "type": "text", "id": "cta_text", "label": "Button text" },
+    { "type": "url", "id": "cta_link", "label": "Button link" }
+  ],
+  "presets": [{ "name": "Image with text" }]
+}
+{% endschema %}

@@ -1,0 +1,40 @@
+{
+  "sections": {
+    "hero": { "type": "hero" },
+    "trust-badges": { "type": "trust-badges" },
+    "stats": { "type": "stats" },
+    "services": { "type": "services-overview" },
+    "how-it-works": { "type": "how-it-works" },
+    "why-choose-us": { "type": "features" },
+    "pricing": { "type": "pricing-cards" },
+    "ats": { "type": "ats-section" },
+    "industries": {
+      "type": "industries-grid",
+      "settings": { "heading": "Resumes Written for Your Industry" }
+    },
+    "resume-samples": { "type": "resume-samples" },
+    "testimonials": { "type": "testimonials" },
+    "faq": {
+      "type": "faq-accordion",
+      "settings": { "heading": "Common Questions" }
+    },
+    "blog": { "type": "blog-list" },
+    "cta-banner": { "type": "cta-banner" }
+  },
+  "order": [
+    "hero",
+    "trust-badges",
+    "stats",
+    "services",
+    "how-it-works",
+    "why-choose-us",
+    "pricing",
+    "ats",
+    "industries",
+    "resume-samples",
+    "testimonials",
+    "faq",
+    "blog",
+    "cta-banner"
+  ]
+}

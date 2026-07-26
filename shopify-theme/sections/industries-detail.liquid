@@ -1,0 +1,67 @@
+<section class="industries-detail page-width">
+  <div class="section-heading">
+    {% if section.settings.eyebrow != blank %}<span class="eyebrow">{{ section.settings.eyebrow }}</span>{% endif %}
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.subheading }}</p>
+  </div>
+  <div class="industries-detail__list">
+    {% for block in section.blocks %}
+      <div class="card industries-detail__item" id="{{ block.settings.title | handleize }}" {{ block.shopify_attributes }}>
+        <div class="industries-detail__icon">{% render 'icon', name: block.settings.icon, size: 26 %}</div>
+        <div>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Industries detail",
+  "tag": "section",
+  "class": "section-industries-detail",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Industries We Serve" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Written in the Language of Your Field" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Every industry has its own resume conventions, keywords, and expectations. Here's how we tailor each one." }
+  ],
+  "blocks": [
+    {
+      "type": "industry",
+      "name": "Industry",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "default": "code", "options": [
+          { "value": "code", "label": "Code" }, { "value": "wrench", "label": "Wrench" }, { "value": "building", "label": "Building" },
+          { "value": "stethoscope", "label": "Stethoscope" }, { "value": "megaphone", "label": "Megaphone" }, { "value": "trending-up", "label": "Trending up" },
+          { "value": "graduation-cap", "label": "Graduation cap" }, { "value": "scale", "label": "Scale" }, { "value": "utensils", "label": "Utensils" },
+          { "value": "shopping-bag", "label": "Shopping bag" }, { "value": "globe", "label": "Globe" }, { "value": "crown", "label": "Crown" }, { "value": "users", "label": "Users" }
+        ]},
+        { "type": "text", "id": "title", "label": "Title", "default": "IT & Technology" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Description of how resumes are tailored for this industry." }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "industry", "settings": { "icon": "code", "title": "IT & Technology", "text": "Resumes structured around technical stack, certifications, and project impact — keyword-matched to the specific tools and platforms named in the job posting, from cloud infrastructure to specific frameworks." } },
+      { "type": "industry", "settings": { "icon": "wrench", "title": "Engineering", "text": "Emphasis on technical certifications, project scope, safety compliance, and measurable engineering outcomes, formatted to suit both corporate and technical review." } },
+      { "type": "industry", "settings": { "icon": "building", "title": "Finance", "text": "Resumes built around quantifiable financial impact — portfolio size, cost savings, compliance, and relevant licenses or designations." } },
+      { "type": "industry", "settings": { "icon": "stethoscope", "title": "Healthcare", "text": "Clinical experience, certifications, licensure, and patient-outcome language structured to match healthcare recruiter and ATS expectations." } },
+      { "type": "industry", "settings": { "icon": "megaphone", "title": "Marketing", "text": "Campaign results, channel expertise, and growth metrics positioned to show measurable marketing impact rather than task lists." } },
+      { "type": "industry", "settings": { "icon": "trending-up", "title": "Sales", "text": "Quota attainment, deal size, and revenue growth presented clearly and specifically — the metrics sales hiring managers scan for first." } },
+      { "type": "industry", "settings": { "icon": "graduation-cap", "title": "Education", "text": "Curriculum development, classroom outcomes, and certifications framed for both academic institutions and ATS-driven district hiring systems." } },
+      { "type": "industry", "settings": { "icon": "building", "title": "Government", "text": "Formatted to match public-sector application requirements, with clear alignment to posted qualifications and competencies." } },
+      { "type": "industry", "settings": { "icon": "wrench", "title": "Construction", "text": "Project scope, safety record, certifications, and on-site leadership experience presented in a format familiar to construction hiring managers." } },
+      { "type": "industry", "settings": { "icon": "scale", "title": "Legal", "text": "Practice areas, case experience, and credentials structured in the precise, formal tone legal hiring expects." } },
+      { "type": "industry", "settings": { "icon": "utensils", "title": "Hospitality", "text": "Guest service metrics, operations experience, and multi-location or shift-management responsibility framed for hospitality recruiters." } },
+      { "type": "industry", "settings": { "icon": "shopping-bag", "title": "Retail", "text": "Sales performance, team leadership, and operations experience structured for both corporate retail and store-level hiring." } },
+      { "type": "industry", "settings": { "icon": "globe", "title": "Remote Jobs", "text": "Async communication skills, self-management, and distributed-team experience highlighted for remote-first hiring processes." } },
+      { "type": "industry", "settings": { "icon": "crown", "title": "Executives", "text": "P&L ownership, organizational transformation, and board-level impact — written for executive search and senior leadership review." } },
+      { "type": "industry", "settings": { "icon": "graduation-cap", "title": "Graduates", "text": "Coursework, internships, and academic projects reframed around transferable, achievement-based language for candidates with limited work history." } }
+    ]
+  },
+  "presets": [{ "name": "Industries detail" }]
+}
+{% endschema %}

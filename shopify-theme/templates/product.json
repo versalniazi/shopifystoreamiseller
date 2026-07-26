@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "main": { "type": "main-product" },
+    "trust": { "type": "trust-badges" },
+    "faq": {
+      "type": "faq-accordion",
+      "settings": {
+        "eyebrow": "Package FAQs",
+        "heading": "Questions About This Package",
+        "show_cta": true
+      },
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "How do I get started after purchasing?", "answer": "<p>You'll receive an order confirmation email with instructions for submitting your current resume, target job title, and any other relevant background.</p>" } },
+        "f2": { "type": "faq", "settings": { "question": "What file formats will I receive?", "answer": "<p>An editable Word (.docx) file and a polished PDF, plus a LinkedIn copy document where applicable.</p>" } }
+      },
+      "block_order": ["f1", "f2"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Not Sure This Is the Right Package?",
+        "text": "Compare all packages side by side to find the best fit for your career stage.",
+        "cta_text": "Compare All Packages",
+        "link": "/collections/packages"
+      }
+    }
+  },
+  "order": ["main", "trust", "faq", "cta"]
+}

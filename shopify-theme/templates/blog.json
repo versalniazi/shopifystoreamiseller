@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": { "type": "main-blog" },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Put This Advice to Work",
+        "text": "Get a professionally written, ATS-optimized resume from Hire Nestt.",
+        "cta_text": "View Packages",
+        "link": "/collections/packages"
+      }
+    }
+  },
+  "order": ["main", "cta"]
+}

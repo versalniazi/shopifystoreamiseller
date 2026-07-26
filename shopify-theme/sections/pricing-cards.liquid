@@ -1,0 +1,67 @@
+<section class="pricing-cards page-width" id="packages">
+  <div class="section-heading">
+    {% if section.settings.eyebrow != blank %}<span class="eyebrow">{{ section.settings.eyebrow }}</span>{% endif %}
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.subheading }}</p>
+  </div>
+  <div class="pricing-cards__grid">
+    {% for block in section.blocks %}
+      <div class="card pricing-card {% if block.settings.featured %}pricing-card--featured{% endif %}" {{ block.shopify_attributes }}>
+        {% if block.settings.badge != blank %}<span class="pricing-card__badge">{{ block.settings.badge }}</span>{% endif %}
+        <h3 class="pricing-card__title">{{ block.settings.title }}</h3>
+        <p class="pricing-card__price"><span>${{ block.settings.price }}</span></p>
+        <ul class="pricing-card__includes">
+          {% assign includes = block.settings.includes | newline_to_br | split: '<br />' %}
+          {% for item in includes %}
+            {% if item != blank %}<li>{% render 'icon', name: 'check', size: 14 %} {{ item | strip }}</li>{% endif %}
+          {% endfor %}
+        </ul>
+        <p class="pricing-card__delivery">{% render 'icon', name: 'clock', size: 14 %} Delivery: {{ block.settings.delivery }}</p>
+        <a href="{{ block.settings.link }}" class="button {% if block.settings.featured %}button--primary{% else %}button--outline{% endif %} pricing-card__cta">{{ block.settings.cta_text | default: 'Choose Package' }}</a>
+      </div>
+    {% endfor %}
+  </div>
+  <p class="pricing-cards__footnote">All prices in USD. Digital delivery only — see our <a href="/pages/faqs">FAQs</a> for full package comparisons.</p>
+</section>
+
+{% schema %}
+{
+  "name": "Pricing cards",
+  "tag": "section",
+  "class": "section-pricing",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Packages" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Simple, Transparent Pricing" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Every package includes ATS optimization, editable files, and a clear delivery window. No subscriptions, no hidden fees." }
+  ],
+  "blocks": [
+    {
+      "type": "package",
+      "name": "Package",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Professional Resume" },
+        { "type": "text", "id": "price", "label": "Price (USD, no $ sign)", "default": "70" },
+        { "type": "text", "id": "badge", "label": "Badge (optional)", "default": "" },
+        { "type": "checkbox", "id": "featured", "label": "Featured / highlighted card", "default": false },
+        { "type": "textarea", "id": "includes", "label": "Includes (one per line)", "default": "Professional Resume\nATS Optimized\nEditable Word File\nPDF Version\n2 Revisions" },
+        { "type": "text", "id": "delivery", "label": "Delivery time", "default": "3 Business Days" },
+        { "type": "url", "id": "link", "label": "Link to product" },
+        { "type": "text", "id": "cta_text", "label": "Button text", "default": "Choose Package" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "package", "settings": { "title": "Entry-Level Graduate Package", "price": "55", "includes": "Graduate-Focused Resume\nATS Optimization\nEditable Word File\nPDF Version\n1 Revision", "delivery": "3 Business Days" } },
+      { "type": "package", "settings": { "title": "Starter Career Package", "price": "65", "includes": "ATS Resume Audit & Optimization\nKeyword Alignment\nFormatting Fix\nEditable Word File\nPDF Version\n1 Revision", "delivery": "2 Business Days" } },
+      { "type": "package", "settings": { "title": "Professional Resume", "price": "70", "includes": "Professional Resume\nATS Optimized\nEditable Word File\nPDF Version\n2 Revisions", "delivery": "3 Business Days" } },
+      { "type": "package", "settings": { "title": "Resume + Cover Letter", "price": "110", "includes": "Everything in Professional Resume\nProfessional Cover Letter\nATS Optimization\nEditable Files\n3 Revisions", "delivery": "4 Business Days" } },
+      { "type": "package", "settings": { "title": "LinkedIn Optimization", "price": "150", "includes": "LinkedIn Headline\nAbout Section\nExperience Rewrite\nSkills Optimization\nKeyword Optimization\nProfile Review", "delivery": "5 Business Days" } },
+      { "type": "package", "settings": { "title": "Job Hunter Bundle", "price": "199", "badge": "Most Popular", "featured": true, "includes": "Professional Resume + Cover Letter\nFull LinkedIn Optimization\nATS Optimization\nEditable Files\n3 Revisions\nPriority Delivery", "delivery": "5 Business Days" } },
+      { "type": "package", "settings": { "title": "Executive Career Package", "price": "299", "includes": "Achievement-Based Executive Resume\nExecutive Cover Letter\nLinkedIn Executive Branding\n1:1 Career Consultation Call\nUnlimited Revisions (30 Days)\n30-Day Email Support", "delivery": "5 Business Days" } },
+      { "type": "package", "settings": { "title": "Ultimate Career Transformation", "price": "399", "badge": "Premium Choice", "includes": "Everything in Executive Package\nInterview Preparation Guide\nPersonal Branding Statement\nCareer Consultation\nUnlimited Revisions (30 Days)\n30-Day Email Support\nPriority Delivery", "delivery": "5-7 Business Days" } }
+    ]
+  },
+  "presets": [{ "name": "Pricing cards" }]
+}
+{% endschema %}

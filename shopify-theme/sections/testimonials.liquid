@@ -1,0 +1,60 @@
+<section class="testimonials page-width" id="testimonials">
+  <div class="section-heading">
+    {% if section.settings.eyebrow != blank %}<span class="eyebrow">{{ section.settings.eyebrow }}</span>{% endif %}
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.subheading }}</p>
+  </div>
+  <div class="testimonials__grid">
+    {% for block in section.blocks %}
+      <div class="card testimonial-card" {{ block.shopify_attributes }}>
+        <div class="testimonial-card__stars">
+          {% for i in (1..block.settings.rating) %}{% render 'icon', name: 'star', size: 14 %}{% endfor %}
+        </div>
+        <p class="testimonial-card__quote">&ldquo;{{ block.settings.quote }}&rdquo;</p>
+        <div class="testimonial-card__author">
+          <span class="testimonial-card__name">{{ block.settings.name }}</span>
+          <span class="testimonial-card__meta">{{ block.settings.role }} &middot; {{ block.settings.country }}</span>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <p class="testimonials__disclaimer">{{ section.settings.disclaimer }}</p>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "tag": "section",
+  "class": "section-testimonials",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Success Stories" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What Clients Say" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Feedback from professionals who used Hire Nestt to move their job search forward." },
+    { "type": "textarea", "id": "disclaimer", "label": "Disclaimer text", "default": "Testimonials are illustrative of typical client feedback. Replace with verified client reviews as they are collected." }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Name", "default": "A. Rahman" },
+        { "type": "text", "id": "role", "label": "Role", "default": "Software Engineer" },
+        { "type": "text", "id": "country", "label": "Country", "default": "United Kingdom" },
+        { "type": "range", "id": "rating", "label": "Rating", "min": 1, "max": 5, "step": 1, "default": 5 },
+        { "type": "textarea", "id": "quote", "label": "Quote", "default": "The resume was completely rewritten around my actual achievements, not just my job titles. I started getting callbacks within two weeks." }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "testimonial", "settings": { "name": "S. Malik", "role": "Software Engineer", "country": "United Kingdom", "rating": 5, "quote": "The resume was rebuilt around my actual achievements, not just my job titles. I started getting more callbacks within a couple of weeks." } },
+      { "type": "testimonial", "settings": { "name": "J. Okafor", "role": "Registered Nurse", "country": "Canada", "rating": 5, "quote": "I'd been applying for months with no response. The ATS optimization made an immediate difference in how many recruiters reached out." } },
+      { "type": "testimonial", "settings": { "name": "M. Alvarez", "role": "Operations Manager", "country": "United States", "rating": 4, "quote": "Clear process, fast turnaround, and the writer actually asked good questions before starting. Two revisions were more than enough." } },
+      { "type": "testimonial", "settings": { "name": "R. Chen", "role": "Marketing Director", "country": "Singapore", "rating": 5, "quote": "The LinkedIn rewrite was the real win for me — recruiter messages picked up almost immediately after the profile went live." } },
+      { "type": "testimonial", "settings": { "name": "T. Nguyen", "role": "Recent Graduate", "country": "Australia", "rating": 5, "quote": "I had almost no work experience to point to. They still built a resume that made my internships and coursework sound genuinely relevant." } },
+      { "type": "testimonial", "settings": { "name": "D. Osei", "role": "Finance Analyst", "country": "United Arab Emirates", "rating": 4, "quote": "Professional, on time, and the formatting held up perfectly when I uploaded it to different company portals." } }
+    ]
+  },
+  "presets": [{ "name": "Testimonials" }]
+}
+{% endschema %}

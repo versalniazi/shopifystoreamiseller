@@ -1,0 +1,45 @@
+<div class="announcement-bar">
+  <div class="announcement-bar__inner page-width">
+    {% for block in section.blocks %}
+      <span class="announcement-bar__item" {{ block.shopify_attributes }}>
+        {% render 'icon', name: block.settings.icon, size: 16 %}
+        {{ block.settings.text }}
+      </span>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "tag": "section",
+  "class": "section-announcement-bar",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "default": "globe",
+          "options": [
+            { "value": "globe", "label": "Globe (worldwide)" },
+            { "value": "shield", "label": "Shield (confidential)" },
+            { "value": "clock", "label": "Clock (delivery)" },
+            { "value": "check-circle", "label": "Check (ATS)" },
+            { "value": "lock", "label": "Lock (secure)" }
+          ]
+        },
+        { "type": "text", "id": "text", "label": "Text", "default": "Worldwide Delivery" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "item", "settings": { "icon": "globe", "text": "Trusted by Clients Worldwide" } },
+      { "type": "item", "settings": { "icon": "check-circle", "text": "100% ATS-Optimized" } },
+      { "type": "item", "settings": { "icon": "clock", "text": "3-5 Business Day Delivery" } },
+      { "type": "item", "settings": { "icon": "shield", "text": "100% Confidential" } }
+    ]
+  }
+}
+{% endschema %}

@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "contact": { "type": "contact-form" },
+    "faq": {
+      "type": "faq-accordion",
+      "settings": {
+        "eyebrow": "Before You Reach Out",
+        "heading": "Quick Answers",
+        "show_cta": true
+      },
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "How quickly will I get a reply?", "answer": "<p>We respond to all inquiries within one business day, Monday through Friday.</p>" } },
+        "f2": { "type": "faq", "settings": { "question": "I already placed an order — where do I send my resume details?", "answer": "<p>Reply directly to your order confirmation email, or use this contact form and select \"Order / Delivery Question.\"</p>" } }
+      },
+      "block_order": ["f1", "f2"]
+    }
+  },
+  "order": ["contact", "faq"]
+}

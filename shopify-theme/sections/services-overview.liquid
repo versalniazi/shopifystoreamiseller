@@ -1,0 +1,53 @@
+<section class="services-overview page-width" id="services">
+  <div class="section-heading">
+    {% if section.settings.eyebrow != blank %}<span class="eyebrow">{{ section.settings.eyebrow }}</span>{% endif %}
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.subheading }}</p>
+  </div>
+  <div class="services-overview__grid">
+    {% for block in section.blocks %}
+      <div class="card service-card" {{ block.shopify_attributes }}>
+        <div class="service-card__icon">{% render 'icon', name: block.settings.icon, size: 28 %}</div>
+        <h3>{{ block.settings.title }}</h3>
+        <p>{{ block.settings.text }}</p>
+        <a href="{{ block.settings.link }}" class="card-link">{{ block.settings.link_text | default: 'Learn More' }} {% render 'icon', name: 'arrow-right', size: 14 %}</a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Services overview",
+  "tag": "section",
+  "class": "section-services",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Our Services" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Everything You Need to Get Noticed" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Three core services, built to work together — or stand alone." }
+  ],
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "default": "file-text", "options": [
+          { "value": "file-text", "label": "Resume" }, { "value": "mail", "label": "Cover Letter" }, { "value": "linkedin", "label": "LinkedIn" }
+        ]},
+        { "type": "text", "id": "title", "label": "Title", "default": "Resume Writing" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Achievement-based, ATS-optimized resumes written for your target role." },
+        { "type": "url", "id": "link", "label": "Link" },
+        { "type": "text", "id": "link_text", "label": "Link text", "default": "Learn More" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "service", "settings": { "icon": "file-text", "title": "Resume Writing", "text": "Achievement-based, ATS-optimized resumes tailored to your target role and industry.", "link_text": "Explore Resume Writing" } },
+      { "type": "service", "settings": { "icon": "mail", "title": "Cover Letter Writing", "text": "A tailored cover letter that connects your experience directly to the job you want.", "link_text": "Explore Cover Letters" } },
+      { "type": "service", "settings": { "icon": "linkedin", "title": "LinkedIn Optimization", "text": "A recruiter-ready LinkedIn profile — headline, About section, experience, and keywords.", "link_text": "Explore LinkedIn Optimization" } }
+    ]
+  },
+  "presets": [{ "name": "Services overview" }]
+}
+{% endschema %}

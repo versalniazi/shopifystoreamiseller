@@ -1,0 +1,58 @@
+<section class="product-package page-width">
+  <div class="product-package__grid">
+    <div class="product-package__media">
+      {% if product.featured_image %}
+        <img src="{{ product.featured_image | image_url: width: 900 }}" alt="{{ product.featured_image.alt | default: product.title }}" width="{{ product.featured_image.width }}" height="{{ product.featured_image.height }}" loading="eager">
+      {% else %}
+        <div class="product-package__placeholder">{% render 'icon', name: 'file-text', size: 56 %}</div>
+      {% endif %}
+      <div class="product-package__badges">
+        <span>{% render 'icon', name: 'lock', size: 14 %} Secure Checkout</span>
+        <span>{% render 'icon', name: 'globe', size: 14 %} Digital Delivery Worldwide</span>
+      </div>
+    </div>
+
+    <div class="product-package__info">
+      {% if product.metafields.custom.badge %}<span class="pricing-card__badge">{{ product.metafields.custom.badge }}</span>{% endif %}
+      <h1>{{ product.title }}</h1>
+      <p class="product-package__price">
+        {{ product.price | money_without_trailing_zeros }}
+        {% if product.compare_at_price > product.price %}
+          <s class="product-package__compare-price">{{ product.compare_at_price | money_without_trailing_zeros }}</s>
+        {% endif %}
+      </p>
+
+      <div class="product-package__description">{{ product.description }}</div>
+
+      {% if product.metafields.custom.delivery_days %}
+        <p class="product-package__delivery">{% render 'icon', name: 'clock', size: 16 %} Delivery: {{ product.metafields.custom.delivery_days }}</p>
+      {% endif %}
+
+      {% form 'product', product %}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <button type="submit" name="add" class="button button--primary button--large product-package__buy" {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}>
+          {% if product.selected_or_first_available_variant.available %}
+            {{ 'products.product.add_to_cart' | t }} — {{ product.price | money_without_trailing_zeros }}
+          {% else %}
+            {{ 'products.product.sold_out' | t }}
+          {% endif %}
+        </button>
+      {% endform %}
+
+      <ul class="product-package__trust">
+        <li>{% render 'icon', name: 'check-circle', size: 14 %} ATS Optimized</li>
+        <li>{% render 'icon', name: 'check-circle', size: 14 %} Editable Word + PDF Files</li>
+        <li>{% render 'icon', name: 'check-circle', size: 14 %} 100% Confidential</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product package",
+  "tag": "section",
+  "class": "section-main-product",
+  "settings": []
+}
+{% endschema %}

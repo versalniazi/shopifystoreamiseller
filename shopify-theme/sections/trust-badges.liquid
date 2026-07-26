@@ -1,0 +1,43 @@
+<section class="trust-badges page-width">
+  <div class="trust-badges__grid">
+    {% for block in section.blocks %}
+      <div class="trust-badge" {{ block.shopify_attributes }}>
+        {% render 'icon', name: block.settings.icon, size: 22 %}
+        <span>{{ block.settings.text }}</span>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trust badges",
+  "tag": "section",
+  "class": "section-trust-badges",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Badge",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "default": "lock", "options": [
+          { "value": "lock", "label": "Lock" }, { "value": "clock", "label": "Clock" }, { "value": "shield", "label": "Shield" },
+          { "value": "users", "label": "Users" }, { "value": "check-circle", "label": "Check" }, { "value": "globe", "label": "Globe" }, { "value": "award", "label": "Award" }
+        ]},
+        { "type": "text", "id": "text", "label": "Text", "default": "Secure Checkout" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "badge", "settings": { "icon": "lock", "text": "Secure Checkout" } },
+      { "type": "badge", "settings": { "icon": "clock", "text": "Fast Delivery" } },
+      { "type": "badge", "settings": { "icon": "award", "text": "Professional Writers" } },
+      { "type": "badge", "settings": { "icon": "check-circle", "text": "ATS Optimized" } },
+      { "type": "badge", "settings": { "icon": "globe", "text": "Worldwide Clients" } },
+      { "type": "badge", "settings": { "icon": "shield", "text": "100% Confidential" } }
+    ]
+  },
+  "presets": [{ "name": "Trust badges" }]
+}
+{% endschema %}

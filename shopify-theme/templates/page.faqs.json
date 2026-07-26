@@ -1,0 +1,108 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "settings": {
+        "eyebrow": "FAQs",
+        "heading": "Frequently Asked Questions",
+        "content": "<p>Answers to the questions we hear most about pricing, delivery, ATS, revisions, refunds, and the writing process. Can't find what you're looking for? <a href=\"/pages/contact\">Contact us</a>.</p>",
+        "width": "rich-text--narrow"
+      }
+    },
+    "faq-pricing": {
+      "type": "faq-accordion",
+      "settings": { "heading": "Pricing & Packages", "show_cta": false },
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "How much do Hire Nestt's services cost?", "answer": "<p>Pricing ranges from $55 to $399 depending on the package and scope of work, listed in USD on every product page with no hidden checkout fees.</p>" } },
+        "f2": { "type": "faq", "settings": { "question": "Which package should I choose?", "answer": "<p>Match your career stage: graduates typically start with the Entry-Level Graduate Package, working professionals choose Professional Resume or Resume + Cover Letter, and senior leaders choose the Job Hunter Bundle, Executive Career Package, or Ultimate Career Transformation.</p>" } },
+        "f3": { "type": "faq", "settings": { "question": "Can I combine or upgrade a package after purchase?", "answer": "<p>Yes — reply to your order confirmation email or contact hirenest56@gmail.com and we'll advise on the price difference and next steps.</p>" } }
+      },
+      "block_order": ["f1", "f2", "f3"]
+    },
+    "faq-delivery": {
+      "type": "faq-accordion",
+      "settings": { "heading": "Delivery & Turnaround", "show_cta": false },
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "How long does delivery take?", "answer": "<p>Delivery ranges from 2 business days (Starter Career Package) up to 5-7 business days (Ultimate Career Transformation), starting once we receive your background details.</p>" } },
+        "f2": { "type": "faq", "settings": { "question": "How will I receive my finished documents?", "answer": "<p>All completed documents are delivered by email as attachments — there is no physical shipment or tracking number involved.</p>" } },
+        "f3": { "type": "faq", "settings": { "question": "What if I don't hear back by my delivery date?", "answer": "<p>Contact hirenest56@gmail.com with your order number and we'll locate your order and provide an update.</p>" } }
+      },
+      "block_order": ["f1", "f2", "f3"]
+    },
+    "faq-ats": {
+      "type": "faq-accordion",
+      "settings": { "heading": "ATS & Keyword Optimization", "show_cta": false },
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "What is ATS, and why does it matter?", "answer": "<p>ATS stands for Applicant Tracking System — software many employers use to sort and search resumes before a human reviews them. Formatting and keyword alignment are built into every package.</p>" } },
+        "f2": { "type": "faq", "settings": { "question": "Do you guarantee my resume will pass every ATS?", "answer": "<p>No single writer can guarantee results with every employer's specific software. We follow widely used ATS-safe formatting and keyword conventions.</p>" } },
+        "f3": { "type": "faq", "settings": { "question": "How do you choose which keywords to include?", "answer": "<p>Keywords are drawn from your target job titles, industry, and existing resume — never inserted generically just to game a system.</p>" } }
+      },
+      "block_order": ["f1", "f2", "f3"]
+    },
+    "faq-revisions": {
+      "type": "faq-accordion",
+      "settings": { "heading": "Revisions", "show_cta": false },
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "How many revisions come with each package?", "answer": "<p>From 1 revision on entry-level packages up to unlimited revisions for 30 days on the Executive and Ultimate packages. See each package page for exact counts.</p>" } },
+        "f2": { "type": "faq", "settings": { "question": "What counts as a revision?", "answer": "<p>Edits to the delivered draft — wording, section order, adding a role — rather than a full rewrite for a different job target, which is treated as a new project.</p>" } }
+      },
+      "block_order": ["f1", "f2"]
+    },
+    "faq-refunds": {
+      "type": "faq-accordion",
+      "settings": { "heading": "Refunds & Cancellations", "show_cta": false },
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "What is Hire Nestt's refund policy?", "answer": "<p>A refund is available if you cancel before drafting has started. Once drafting begins, revisions are the mechanism for addressing feedback rather than a refund. See our full Refund Policy.</p>" } },
+        "f2": { "type": "faq", "settings": { "question": "Can I cancel my order before work starts?", "answer": "<p>Yes — contact hirenest56@gmail.com before drafting begins and you're eligible for a refund.</p>" } }
+      },
+      "block_order": ["f1", "f2"]
+    },
+    "faq-linkedin": {
+      "type": "faq-accordion",
+      "settings": { "heading": "LinkedIn Optimization", "show_cta": false },
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "Do you need access to my LinkedIn account?", "answer": "<p>No. Optimized content is delivered as a document for you to paste into your own profile — we never request your login.</p>" } },
+        "f2": { "type": "faq", "settings": { "question": "Can I bundle LinkedIn with my resume and cover letter?", "answer": "<p>Yes — the Job Hunter Bundle combines resume, cover letter, and LinkedIn optimization at a lower combined price than purchasing separately.</p>" } }
+      },
+      "block_order": ["f1", "f2"]
+    },
+    "faq-payment": {
+      "type": "faq-accordion",
+      "settings": { "heading": "Payment & Checkout", "show_cta": false },
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "What payment methods do you accept?", "answer": "<p>Payments are processed securely through Shopify checkout, typically including major cards plus any additional methods enabled, such as PayPal or Shop Pay.</p>" } },
+        "f2": { "type": "faq", "settings": { "question": "Is it safe to enter my card details?", "answer": "<p>Yes — checkout is handled by Shopify's PCI-compliant system. Hire Nestt never directly receives or stores your card details.</p>" } }
+      },
+      "block_order": ["f1", "f2"]
+    },
+    "faq-privacy": {
+      "type": "faq-accordion",
+      "settings": { "heading": "Privacy & Confidentiality", "show_cta": false },
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "Is my resume and personal information kept confidential?", "answer": "<p>Yes. Your details are kept private and are never shared with or sold to third parties.</p>" } },
+        "f2": { "type": "faq", "settings": { "question": "Do you use my information to train AI models or share it with other companies?", "answer": "<p>No. Your information is used solely to deliver the service you purchased.</p>" } }
+      },
+      "block_order": ["f1", "f2"]
+    },
+    "faq-formats": {
+      "type": "faq-accordion",
+      "settings": { "heading": "Resume Formats & File Types", "show_cta": false },
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "What file formats will I receive?", "answer": "<p>An editable Word document (.docx) and a PDF version for every resume and cover letter package, plus a LinkedIn copy document where applicable.</p>" } },
+        "f2": { "type": "faq", "settings": { "question": "Will my resume work if I'm applying outside my home country?", "answer": "<p>Yes — we serve clients worldwide in professional English. Let us know your target country so formatting conventions can be tailored accordingly.</p>" } }
+      },
+      "block_order": ["f1", "f2"]
+    },
+    "faq-career": {
+      "type": "faq-accordion",
+      "settings": { "heading": "General Career Questions", "show_cta": true, "cta_text": "Still Have Questions? Contact Us" },
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "Do you guarantee I'll get interviews or a job offer?", "answer": "<p>No. We provide professionally written, well-formatted career documents, but outcomes depend on factors outside any writer's control.</p>" } },
+        "f2": { "type": "faq", "settings": { "question": "I'm changing careers with no direct experience in my target industry — can you help?", "answer": "<p>Yes — we focus on transferable skills and reframe past experience around your target role.</p>" } },
+        "f3": { "type": "faq", "settings": { "question": "Can students or first-time job seekers use your services?", "answer": "<p>Yes — the Entry-Level Graduate Package is built specifically for students and recent graduates.</p>" } }
+      },
+      "block_order": ["f1", "f2", "f3"]
+    }
+  },
+  "order": ["intro", "faq-pricing", "faq-delivery", "faq-ats", "faq-revisions", "faq-refunds", "faq-linkedin", "faq-payment", "faq-privacy", "faq-formats", "faq-career"]
+}

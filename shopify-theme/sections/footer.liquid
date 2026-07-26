@@ -1,0 +1,82 @@
+<footer class="site-footer">
+  <div class="site-footer__top page-width">
+    <div class="site-footer__brand">
+      <span class="site-footer__wordmark">{{ shop.name | default: 'Hire Nestt' }}</span>
+      <p class="site-footer__tagline">{{ section.settings.tagline | default: 'Premium resume writing, cover letter, and LinkedIn optimization services for job seekers worldwide.' }}</p>
+      <div class="site-footer__trust-row">
+        {% render 'icon', name: 'lock', size: 16 %} Secure Checkout
+        {% render 'icon', name: 'globe', size: 16 %} Worldwide Delivery
+        {% render 'icon', name: 'shield', size: 16 %} 100% Confidential
+      </div>
+    </div>
+
+    {% for block in section.blocks %}
+      {% if block.type == 'link_column' %}
+        <div class="site-footer__column" {{ block.shopify_attributes }}>
+          <h3 class="site-footer__heading">{{ block.settings.heading }}</h3>
+          <ul>
+            {% for link in block.settings.menu.links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    <div class="site-footer__column site-footer__newsletter">
+      <h3 class="site-footer__heading">{{ 'footer.newsletter_heading' | t }}</h3>
+      <p>{{ 'footer.newsletter_subheading' | t }}</p>
+      {% form 'customer', class: 'newsletter-form' %}
+        {% if form.posted_successfully? %}
+          <p class="newsletter-form__success">{{ 'general.newsletter.success' | t }}</p>
+        {% endif %}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <div class="newsletter-form__row">
+          <label for="NewsletterEmail" class="visually-hidden">{{ 'general.newsletter.email_placeholder' | t }}</label>
+          <input type="email" name="contact[email]" id="NewsletterEmail" placeholder="{{ 'general.newsletter.email_placeholder' | t }}" required>
+          <button type="submit">{{ 'general.newsletter.submit' | t }}</button>
+        </div>
+      {% endform %}
+
+      <div class="site-footer__social">
+        {% if settings.social_linkedin_link != blank %}<a href="{{ settings.social_linkedin_link }}" aria-label="LinkedIn">{% render 'icon', name: 'linkedin', size: 20 %}</a>{% endif %}
+        {% if settings.social_instagram_link != blank %}<a href="{{ settings.social_instagram_link }}" aria-label="Instagram">{% render 'icon', name: 'users', size: 20 %}</a>{% endif %}
+        {% if settings.social_facebook_link != blank %}<a href="{{ settings.social_facebook_link }}" aria-label="Facebook">{% render 'icon', name: 'users', size: 20 %}</a>{% endif %}
+        {% if settings.social_twitter_link != blank %}<a href="{{ settings.social_twitter_link }}" aria-label="X / Twitter">{% render 'icon', name: 'users', size: 20 %}</a>{% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom page-width">
+    <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. {{ 'footer.copyright' | t }}</p>
+    <p class="site-footer__contact">{{ block.settings.email | default: 'hirenest56@gmail.com' }}</p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "footer",
+  "class": "section-footer",
+  "settings": [
+    { "type": "text", "id": "tagline", "label": "Footer tagline" }
+  ],
+  "blocks": [
+    {
+      "type": "link_column",
+      "name": "Link column",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Services" },
+        { "type": "link_list", "id": "menu", "label": "Menu" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "link_column", "settings": { "heading": "Services", "menu": "footer-services" } },
+      { "type": "link_column", "settings": { "heading": "Company", "menu": "footer-company" } },
+      { "type": "link_column", "settings": { "heading": "Policies", "menu": "footer-policies" } }
+    ]
+  }
+}
+{% endschema %}

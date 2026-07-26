@@ -1,0 +1,22 @@
+<section class="cta-banner page-width">
+  <div class="cta-banner__inner">
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.text }}</p>
+    <a href="{{ section.settings.link }}" class="button button--primary button--large">{{ section.settings.cta_text }}</a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CTA banner",
+  "tag": "section",
+  "class": "section-cta-banner",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Your Next Role Starts With a Stronger Resume" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Get a professionally written, ATS-optimized resume delivered in as little as 2 business days." },
+    { "type": "text", "id": "cta_text", "label": "Button text", "default": "View Packages" },
+    { "type": "url", "id": "link", "label": "Button link" }
+  ],
+  "presets": [{ "name": "CTA banner" }]
+}
+{% endschema %}

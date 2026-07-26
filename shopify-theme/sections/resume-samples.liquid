@@ -1,0 +1,54 @@
+<section class="resume-samples page-width" id="samples">
+  <div class="section-heading">
+    {% if section.settings.eyebrow != blank %}<span class="eyebrow">{{ section.settings.eyebrow }}</span>{% endif %}
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.subheading }}</p>
+  </div>
+  <div class="resume-samples__grid">
+    {% for block in section.blocks %}
+      <div class="card resume-sample-card" {{ block.shopify_attributes }}>
+        <div class="resume-sample-card__media">
+          {% if block.settings.image %}
+            <img src="{{ block.settings.image | image_url: width: 500 }}" alt="{{ block.settings.image.alt | default: block.settings.title }}" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}" loading="lazy">
+          {% else %}
+            <div class="resume-sample-card__placeholder">{% render 'icon', name: 'file-text', size: 40 %}</div>
+          {% endif %}
+        </div>
+        <h3>{{ block.settings.title }}</h3>
+        <p>{{ block.settings.text }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Resume samples",
+  "tag": "section",
+  "class": "section-resume-samples",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "See the Difference" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Before & After: What Changes" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "A rewrite isn't just a new template — it's a change in how your experience reads to both software and people." }
+  ],
+  "blocks": [
+    {
+      "type": "sample",
+      "name": "Sample",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Duties → Achievements" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "\"Responsible for managing a team\" becomes \"Led a 12-person team to a 30% reduction in project turnaround time.\"" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "sample", "settings": { "title": "Duties → Achievements", "text": "\"Responsible for managing a team\" becomes a specific, measurable statement about what that management produced." } },
+      { "type": "sample", "settings": { "title": "Dense Text → Scannable Structure", "text": "Long paragraphs are restructured into clean, ATS-readable bullet points recruiters can scan in seconds." } },
+      { "type": "sample", "settings": { "title": "Generic Skills → Targeted Keywords", "text": "Skill lists are rebuilt around the exact language your target job descriptions use." } }
+    ]
+  },
+  "presets": [{ "name": "Resume samples" }]
+}
+{% endschema %}

@@ -1,0 +1,37 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "settings": {
+        "eyebrow": "Industries",
+        "heading": "Industry-Specific Resume Writing",
+        "content": "<p>A resume that works for a software engineer won't work the same way for a nurse, an attorney, or a retail manager — the keywords, structure, and emphasis all shift by field. We match your resume, cover letter, and LinkedIn profile to what recruiters and ATS systems in your specific industry actually expect.</p>",
+        "width": "rich-text--narrow"
+      }
+    },
+    "industries": { "type": "industries-detail" },
+    "faq": {
+      "type": "faq-accordion",
+      "settings": {
+        "eyebrow": "Industry FAQs",
+        "heading": "Common Questions About Industry-Specific Writing",
+        "show_cta": true
+      },
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "What if my industry isn't listed?", "answer": "<p>The industries listed are our most common client backgrounds, not a limit. Contact us with your field and target role and we'll confirm we're a good fit before you purchase.</p>" } },
+        "f2": { "type": "faq", "settings": { "question": "Do you write resumes for international applicants?", "answer": "<p>Yes. We work with clients worldwide and adapt formatting and terminology to the country and industry you're applying within where relevant.</p>" } }
+      },
+      "block_order": ["f1", "f2"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Get a Resume That Speaks Your Industry's Language",
+        "text": "Choose a package and tell us your target role — we'll handle the industry-specific details.",
+        "cta_text": "View Packages",
+        "link": "/collections/packages"
+      }
+    }
+  },
+  "order": ["intro", "industries", "faq", "cta"]
+}

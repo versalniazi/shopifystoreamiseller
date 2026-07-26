@@ -1,0 +1,32 @@
+<section class="main-blog page-width">
+  <div class="section-heading">
+    <h1>{{ blog.title }}</h1>
+  </div>
+  <div class="blog-list__grid">
+    {% paginate blog.articles by 9 %}
+      {% for article in blog.articles %}
+        <a href="{{ article.url }}" class="card blog-card">
+          <div class="blog-card__media">
+            {% if article.image %}
+              <img src="{{ article.image | image_url: width: 500 }}" alt="{{ article.image.alt | default: article.title }}" width="{{ article.image.width }}" height="{{ article.image.height }}" loading="lazy">
+            {% else %}
+              <div class="blog-card__placeholder">{% render 'icon', name: 'file-text', size: 32 %}</div>
+            {% endif %}
+          </div>
+          {% if article.tags.size > 0 %}<span class="blog-card__tag">{{ article.tags.first }}</span>{% endif %}
+          <h3>{{ article.title }}</h3>
+          <p>{{ article.excerpt_or_content | strip_html | truncatewords: 20 }}</p>
+        </a>
+      {% endfor %}
+    {% endpaginate %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog list",
+  "tag": "section",
+  "class": "section-main-blog",
+  "settings": []
+}
+{% endschema %}

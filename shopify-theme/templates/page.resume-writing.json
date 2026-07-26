@@ -1,0 +1,83 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "settings": {
+        "eyebrow": "Resume Writing",
+        "heading": "A Resume Built Around What You've Actually Achieved",
+        "content": "<p>Most resumes list job duties. Ours are built around outcomes — the specific, measurable results that show a hiring manager exactly what you're capable of. Every resume we write is structured for two readers at once: the applicant tracking system that scans it first, and the human recruiter who decides what happens next.</p>",
+        "width": "rich-text--narrow"
+      }
+    },
+    "resume-types": {
+      "type": "features",
+      "settings": {
+        "eyebrow": "Resume Types We Write",
+        "heading": "The Right Resume for Where You Are",
+        "subheading": "Every resume type below is available across our packages — the format is matched to your career stage and target role."
+      },
+      "blocks": {
+        "b1": { "type": "feature", "settings": { "icon": "file-text", "title": "Professional Resume", "text": "A clean, achievement-based resume for mid-level professionals — the foundation of every package." } },
+        "b2": { "type": "feature", "settings": { "icon": "target", "title": "ATS Resume", "text": "Formatted specifically to parse cleanly through applicant tracking systems, with keyword alignment to your target job postings." } },
+        "b3": { "type": "feature", "settings": { "icon": "award", "title": "Modern Resume", "text": "A contemporary layout with clear visual hierarchy — professional, not flashy, and still fully ATS-safe." } },
+        "b4": { "type": "feature", "settings": { "icon": "crown", "title": "Executive Resume", "text": "Built for director-level and above: leadership impact, P&L ownership, and strategic results, not task lists." } },
+        "b5": { "type": "feature", "settings": { "icon": "check-circle", "title": "Keyword-Optimized Resume", "text": "Keywords are pulled from real job descriptions in your target field so your resume speaks the language recruiters search for." } },
+        "b6": { "type": "feature", "settings": { "icon": "users", "title": "Interview-Focused Resume", "text": "Structured so every bullet point gives you a natural, confident talking point once you reach the interview stage." } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6"]
+    },
+    "benefits": {
+      "type": "image-with-text",
+      "settings": {
+        "layout": "default",
+        "icon": "target",
+        "eyebrow": "Why It Matters",
+        "heading": "Benefits of a Professionally Written Resume",
+        "text": "<ul><li>Pass automated screening instead of being filtered out before a human sees your application</li><li>Communicate your value in the first 6-10 seconds a recruiter spends scanning</li><li>Present consistent, error-free formatting across every application you submit</li><li>Reuse a strong foundation across multiple tailored versions for different roles</li></ul>"
+      }
+    },
+    "process": {
+      "type": "how-it-works",
+      "settings": {
+        "eyebrow": "Process & Timeline",
+        "heading": "How Your Resume Gets Written",
+        "subheading": "From purchase to final file, here's exactly what happens.",
+        "cta_text": "View Resume Packages",
+        "cta_link": "/collections/packages"
+      },
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Purchase Your Package", "text": "Choose the resume package that matches your career stage — from Entry-Level Graduate to Executive." } },
+        "s2": { "type": "step", "settings": { "title": "Share Your Background", "text": "Send your current resume (if you have one), your target job title, and 1-2 example job postings." } },
+        "s3": { "type": "step", "settings": { "title": "First Draft", "text": "Your writer delivers a complete first draft within your package's stated business-day window." } },
+        "s4": { "type": "step", "settings": { "title": "Revisions", "text": "Request changes within your included revision rounds until the resume is exactly right." } },
+        "s5": { "type": "step", "settings": { "title": "Final Delivery", "text": "Receive your finished resume as an editable Word file and a polished PDF." } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4", "s5"]
+    },
+    "faq": {
+      "type": "faq-accordion",
+      "settings": {
+        "eyebrow": "Resume Writing FAQs",
+        "heading": "Questions About Our Resume Writing Service",
+        "show_cta": true
+      },
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "What's the difference between the Professional Resume and Executive Career packages?", "answer": "<p>The Professional Resume package covers a full achievement-based rewrite for most career stages. The Executive Career Package adds executive-level positioning, a career consultation call, and unlimited revisions for senior leadership roles.</p>" } },
+        "f2": { "type": "faq", "settings": { "question": "Do you write resumes for career changers?", "answer": "<p>Yes. We highlight transferable skills and reframe prior experience around your new target role rather than simply listing your past job titles.</p>" } },
+        "f3": { "type": "faq", "settings": { "question": "Can you work from an existing resume instead of starting from scratch?", "answer": "<p>Yes — send your current resume and we'll rebuild it, or use the Starter Career Package if you only need an ATS review and optimization rather than a full rewrite.</p>" } },
+        "f4": { "type": "faq", "settings": { "question": "How many revisions do I get?", "answer": "<p>Revisions range from 1 round on entry-level packages to unlimited revisions for 30 days on our Executive and Ultimate packages. See each package for exact details.</p>" } }
+      },
+      "block_order": ["f1", "f2", "f3", "f4"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Ready for a Resume That Works as Hard as You Do?",
+        "text": "Choose a resume package and get a professionally written, ATS-optimized resume in as little as 2 business days.",
+        "cta_text": "View Resume Packages",
+        "link": "/collections/packages"
+      }
+    }
+  },
+  "order": ["intro", "resume-types", "benefits", "process", "faq", "cta"]
+}
