@@ -20,12 +20,13 @@
   {% endif %}
 
   <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-  {{ settings.font_heading | font_face: font_display: 'swap' }}
-  {{ settings.font_body | font_face: font_display: 'swap' }}
 
   {{ content_for_header }}
 
   <style>
+    {{ settings.font_heading | font_face: font_display: 'swap' }}
+    {{ settings.font_body | font_face: font_display: 'swap' }}
+
     :root{
       --color-primary: {{ settings.color_primary }};
       --color-secondary: {{ settings.color_secondary }};
