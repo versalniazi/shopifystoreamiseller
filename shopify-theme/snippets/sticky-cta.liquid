@@ -1,8 +1,0 @@
-{%- comment -%} Mobile sticky CTA bar — hidden on desktop, hidden on cart/checkout {%- endcomment -%}
-{% unless template contains 'cart' %}
-<div class="sticky-cta" id="StickyCta">
-  <a href="{{ settings.sticky_cta_link | default: '/collections/packages' }}" class="button button--primary sticky-cta__button">
-    {{ settings.sticky_cta_text | default: 'Get Your Resume Reviewed' }}
-  </a>
-</div>
-{% endunless %}
