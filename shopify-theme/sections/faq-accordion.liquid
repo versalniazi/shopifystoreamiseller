@@ -48,32 +48,102 @@
   "tag": "section",
   "class": "section-faq",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "FAQs" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Frequently Asked Questions" },
-    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Answers to the most common questions about pricing, delivery, and the writing process." },
-    { "type": "checkbox", "id": "show_cta", "label": "Show 'View all FAQs' button", "default": true },
-    { "type": "text", "id": "cta_text", "label": "CTA text", "default": "View All FAQs" }
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "FAQs"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Answers to the most common questions about pricing, delivery, and the writing process."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "label": "Show 'View all FAQs' button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "View All FAQs"
+    }
   ],
   "blocks": [
     {
       "type": "faq",
       "name": "FAQ",
       "settings": [
-        { "type": "text", "id": "question", "label": "Question", "default": "How long does delivery take?" },
-        { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>Delivery ranges from 2 to 7 business days depending on the package you choose.</p>" }
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How long does delivery take?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Delivery ranges from 2 to 7 business days depending on the package you choose.</p>"
+        }
       ]
     }
   ],
   "default": {
     "blocks": [
-      { "type": "faq", "settings": { "question": "How long does delivery take?", "answer": "<p>Delivery ranges from 2 to 7 business days depending on the package, starting once we receive your background details. Exact timelines are listed on every package.</p>" } },
-      { "type": "faq", "settings": { "question": "Will my resume actually pass ATS software?", "answer": "<p>Every resume is built with ATS-safe formatting and keyword optimization aligned to your target role. No formatting choice guarantees every ATS configuration, but we follow the practices known to parse cleanly across major systems.</p>" } },
-      { "type": "faq", "settings": { "question": "What file formats do I receive?", "answer": "<p>You'll receive an editable Microsoft Word (.docx) file and a polished PDF version. LinkedIn Optimization orders also include a separate copy document for your profile sections.</p>" } },
-      { "type": "faq", "settings": { "question": "How many revisions are included?", "answer": "<p>Revisions vary by package, from 1 round on entry packages up to unlimited revisions for 30 days on our Executive and Ultimate packages. Full details are listed on each package and in our Revision Policy.</p>" } },
-      { "type": "faq", "settings": { "question": "Do you guarantee I'll get interviews or a job offer?", "answer": "<p>No. We write and optimize your career materials to the best professional standard, but we cannot guarantee interviews or offers, which depend on many factors outside our control.</p>" } },
-      { "type": "faq", "settings": { "question": "Can I get a refund after my resume is delivered?", "answer": "<p>Refunds are available before drafting begins. Once your final files are delivered, revisions are used to make changes instead of a refund. See our full Refund Policy for details.</p>" } }
+      {
+        "type": "faq",
+        "settings": {
+          "question": "How long does delivery take?",
+          "answer": "<p>Delivery ranges from 2 to 7 business days depending on the package, starting once we receive your background details. Exact timelines are listed on every package.</p>"
+        }
+      },
+      {
+        "type": "faq",
+        "settings": {
+          "question": "Will my resume actually pass ATS software?",
+          "answer": "<p>Every resume is built with ATS-safe formatting and keyword optimization aligned to your target role. No formatting choice guarantees every ATS configuration, but we follow the practices known to parse cleanly across major systems.</p>"
+        }
+      },
+      {
+        "type": "faq",
+        "settings": {
+          "question": "What file formats do I receive?",
+          "answer": "<p>You'll receive an editable Microsoft Word (.docx) file and a polished PDF version. LinkedIn Optimization orders also include a separate copy document for your profile sections.</p>"
+        }
+      },
+      {
+        "type": "faq",
+        "settings": {
+          "question": "How many revisions are included?",
+          "answer": "<p>Revisions vary by package, from 1 round on entry packages up to unlimited revisions for 30 days on our Executive and Ultimate packages. Full details are listed on each package and in our Revision Policy.</p>"
+        }
+      },
+      {
+        "type": "faq",
+        "settings": {
+          "question": "Do you guarantee I'll get interviews or a job offer?",
+          "answer": "<p>No. We write and optimize your career materials to the best professional standard, but we cannot guarantee interviews or offers, which depend on many factors outside our control.</p>"
+        }
+      },
+      {
+        "type": "faq",
+        "settings": {
+          "question": "Can I get a refund after my resume is delivered?",
+          "answer": "<p>Refunds are available before drafting begins. Once your final files are delivered, revisions are used to make changes instead of a refund. See our full Refund Policy for details.</p>"
+        }
+      }
     ]
-  },
-  "presets": [{ "name": "FAQ accordion" }]
+  }
 }
 {% endschema %}

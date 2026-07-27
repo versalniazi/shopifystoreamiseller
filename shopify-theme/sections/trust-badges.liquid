@@ -20,24 +20,96 @@
       "type": "badge",
       "name": "Badge",
       "settings": [
-        { "type": "select", "id": "icon", "label": "Icon", "default": "lock", "options": [
-          { "value": "lock", "label": "Lock" }, { "value": "clock", "label": "Clock" }, { "value": "shield", "label": "Shield" },
-          { "value": "users", "label": "Users" }, { "value": "check-circle", "label": "Check" }, { "value": "globe", "label": "Globe" }, { "value": "award", "label": "Award" }
-        ]},
-        { "type": "text", "id": "text", "label": "Text", "default": "Secure Checkout" }
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "default": "lock",
+          "options": [
+            {
+              "value": "lock",
+              "label": "Lock"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "users",
+              "label": "Users"
+            },
+            {
+              "value": "check-circle",
+              "label": "Check"
+            },
+            {
+              "value": "globe",
+              "label": "Globe"
+            },
+            {
+              "value": "award",
+              "label": "Award"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Secure Checkout"
+        }
       ]
     }
   ],
   "default": {
     "blocks": [
-      { "type": "badge", "settings": { "icon": "lock", "text": "Secure Checkout" } },
-      { "type": "badge", "settings": { "icon": "clock", "text": "Fast Delivery" } },
-      { "type": "badge", "settings": { "icon": "award", "text": "Professional Writers" } },
-      { "type": "badge", "settings": { "icon": "check-circle", "text": "ATS Optimized" } },
-      { "type": "badge", "settings": { "icon": "globe", "text": "Worldwide Clients" } },
-      { "type": "badge", "settings": { "icon": "shield", "text": "100% Confidential" } }
+      {
+        "type": "badge",
+        "settings": {
+          "icon": "lock",
+          "text": "Secure Checkout"
+        }
+      },
+      {
+        "type": "badge",
+        "settings": {
+          "icon": "clock",
+          "text": "Fast Delivery"
+        }
+      },
+      {
+        "type": "badge",
+        "settings": {
+          "icon": "award",
+          "text": "Professional Writers"
+        }
+      },
+      {
+        "type": "badge",
+        "settings": {
+          "icon": "check-circle",
+          "text": "ATS Optimized"
+        }
+      },
+      {
+        "type": "badge",
+        "settings": {
+          "icon": "globe",
+          "text": "Worldwide Clients"
+        }
+      },
+      {
+        "type": "badge",
+        "settings": {
+          "icon": "shield",
+          "text": "100% Confidential"
+        }
+      }
     ]
-  },
-  "presets": [{ "name": "Trust badges" }]
+  }
 }
 {% endschema %}

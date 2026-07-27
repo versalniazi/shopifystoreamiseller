@@ -20,19 +20,52 @@
       "type": "stat",
       "name": "Statistic",
       "settings": [
-        { "type": "text", "id": "number", "label": "Number", "default": "3-5" },
-        { "type": "text", "id": "label", "label": "Label", "default": "Business Days Average Delivery" }
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "3-5"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Business Days Average Delivery"
+        }
       ]
     }
   ],
   "default": {
     "blocks": [
-      { "type": "stat", "settings": { "number": "20+", "label": "Industries Served" } },
-      { "type": "stat", "settings": { "number": "3-5", "label": "Business Days Average Delivery" } },
-      { "type": "stat", "settings": { "number": "100%", "label": "ATS-Optimized Formatting" } },
-      { "type": "stat", "settings": { "number": "Worldwide", "label": "Clients Served Remotely" } }
+      {
+        "type": "stat",
+        "settings": {
+          "number": "20+",
+          "label": "Industries Served"
+        }
+      },
+      {
+        "type": "stat",
+        "settings": {
+          "number": "3-5",
+          "label": "Business Days Average Delivery"
+        }
+      },
+      {
+        "type": "stat",
+        "settings": {
+          "number": "100%",
+          "label": "ATS-Optimized Formatting"
+        }
+      },
+      {
+        "type": "stat",
+        "settings": {
+          "number": "Worldwide",
+          "label": "Clients Served Remotely"
+        }
+      }
     ]
-  },
-  "presets": [{ "name": "Stats" }]
+  }
 }
 {% endschema %}

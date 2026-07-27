@@ -30,38 +30,157 @@
   "tag": "section",
   "class": "section-pricing",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Packages" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Simple, Transparent Pricing" },
-    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Every package includes ATS optimization, editable files, and a clear delivery window. No subscriptions, no hidden fees." }
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Packages"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Simple, Transparent Pricing"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Every package includes ATS optimization, editable files, and a clear delivery window. No subscriptions, no hidden fees."
+    }
   ],
   "blocks": [
     {
       "type": "package",
       "name": "Package",
       "settings": [
-        { "type": "text", "id": "title", "label": "Title", "default": "Professional Resume" },
-        { "type": "text", "id": "price", "label": "Price (USD, no $ sign)", "default": "70" },
-        { "type": "text", "id": "badge", "label": "Badge (optional)", "default": "" },
-        { "type": "checkbox", "id": "featured", "label": "Featured / highlighted card", "default": false },
-        { "type": "textarea", "id": "includes", "label": "Includes (one per line)", "default": "Professional Resume\nATS Optimized\nEditable Word File\nPDF Version\n2 Revisions" },
-        { "type": "text", "id": "delivery", "label": "Delivery time", "default": "3 Business Days" },
-        { "type": "url", "id": "link", "label": "Link to product" },
-        { "type": "text", "id": "cta_text", "label": "Button text", "default": "Choose Package" }
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Professional Resume"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price (USD, no $ sign)",
+          "default": "70"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge (optional)"
+        },
+        {
+          "type": "checkbox",
+          "id": "featured",
+          "label": "Featured / highlighted card",
+          "default": false
+        },
+        {
+          "type": "textarea",
+          "id": "includes",
+          "label": "Includes (one per line)",
+          "default": "Professional Resume\nATS Optimized\nEditable Word File\nPDF Version\n2 Revisions"
+        },
+        {
+          "type": "text",
+          "id": "delivery",
+          "label": "Delivery time",
+          "default": "3 Business Days"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link to product"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "Button text",
+          "default": "Choose Package"
+        }
       ]
     }
   ],
   "default": {
     "blocks": [
-      { "type": "package", "settings": { "title": "Entry-Level Graduate Package", "price": "55", "includes": "Graduate-Focused Resume\nATS Optimization\nEditable Word File\nPDF Version\n1 Revision", "delivery": "3 Business Days" } },
-      { "type": "package", "settings": { "title": "Starter Career Package", "price": "65", "includes": "ATS Resume Audit & Optimization\nKeyword Alignment\nFormatting Fix\nEditable Word File\nPDF Version\n1 Revision", "delivery": "2 Business Days" } },
-      { "type": "package", "settings": { "title": "Professional Resume", "price": "70", "includes": "Professional Resume\nATS Optimized\nEditable Word File\nPDF Version\n2 Revisions", "delivery": "3 Business Days" } },
-      { "type": "package", "settings": { "title": "Resume + Cover Letter", "price": "110", "includes": "Everything in Professional Resume\nProfessional Cover Letter\nATS Optimization\nEditable Files\n3 Revisions", "delivery": "4 Business Days" } },
-      { "type": "package", "settings": { "title": "LinkedIn Optimization", "price": "150", "includes": "LinkedIn Headline\nAbout Section\nExperience Rewrite\nSkills Optimization\nKeyword Optimization\nProfile Review", "delivery": "5 Business Days" } },
-      { "type": "package", "settings": { "title": "Job Hunter Bundle", "price": "199", "badge": "Most Popular", "featured": true, "includes": "Professional Resume + Cover Letter\nFull LinkedIn Optimization\nATS Optimization\nEditable Files\n3 Revisions\nPriority Delivery", "delivery": "5 Business Days" } },
-      { "type": "package", "settings": { "title": "Executive Career Package", "price": "299", "includes": "Achievement-Based Executive Resume\nExecutive Cover Letter\nLinkedIn Executive Branding\n1:1 Career Consultation Call\nUnlimited Revisions (30 Days)\n30-Day Email Support", "delivery": "5 Business Days" } },
-      { "type": "package", "settings": { "title": "Ultimate Career Transformation", "price": "399", "badge": "Premium Choice", "includes": "Everything in Executive Package\nInterview Preparation Guide\nPersonal Branding Statement\nCareer Consultation\nUnlimited Revisions (30 Days)\n30-Day Email Support\nPriority Delivery", "delivery": "5-7 Business Days" } }
+      {
+        "type": "package",
+        "settings": {
+          "title": "Entry-Level Graduate Package",
+          "price": "55",
+          "includes": "Graduate-Focused Resume\nATS Optimization\nEditable Word File\nPDF Version\n1 Revision",
+          "delivery": "3 Business Days"
+        }
+      },
+      {
+        "type": "package",
+        "settings": {
+          "title": "Starter Career Package",
+          "price": "65",
+          "includes": "ATS Resume Audit & Optimization\nKeyword Alignment\nFormatting Fix\nEditable Word File\nPDF Version\n1 Revision",
+          "delivery": "2 Business Days"
+        }
+      },
+      {
+        "type": "package",
+        "settings": {
+          "title": "Professional Resume",
+          "price": "70",
+          "includes": "Professional Resume\nATS Optimized\nEditable Word File\nPDF Version\n2 Revisions",
+          "delivery": "3 Business Days"
+        }
+      },
+      {
+        "type": "package",
+        "settings": {
+          "title": "Resume + Cover Letter",
+          "price": "110",
+          "includes": "Everything in Professional Resume\nProfessional Cover Letter\nATS Optimization\nEditable Files\n3 Revisions",
+          "delivery": "4 Business Days"
+        }
+      },
+      {
+        "type": "package",
+        "settings": {
+          "title": "LinkedIn Optimization",
+          "price": "150",
+          "includes": "LinkedIn Headline\nAbout Section\nExperience Rewrite\nSkills Optimization\nKeyword Optimization\nProfile Review",
+          "delivery": "5 Business Days"
+        }
+      },
+      {
+        "type": "package",
+        "settings": {
+          "title": "Job Hunter Bundle",
+          "price": "199",
+          "badge": "Most Popular",
+          "featured": true,
+          "includes": "Professional Resume + Cover Letter\nFull LinkedIn Optimization\nATS Optimization\nEditable Files\n3 Revisions\nPriority Delivery",
+          "delivery": "5 Business Days"
+        }
+      },
+      {
+        "type": "package",
+        "settings": {
+          "title": "Executive Career Package",
+          "price": "299",
+          "includes": "Achievement-Based Executive Resume\nExecutive Cover Letter\nLinkedIn Executive Branding\n1:1 Career Consultation Call\nUnlimited Revisions (30 Days)\n30-Day Email Support",
+          "delivery": "5 Business Days"
+        }
+      },
+      {
+        "type": "package",
+        "settings": {
+          "title": "Ultimate Career Transformation",
+          "price": "399",
+          "badge": "Premium Choice",
+          "includes": "Everything in Executive Package\nInterview Preparation Guide\nPersonal Branding Statement\nCareer Consultation\nUnlimited Revisions (30 Days)\n30-Day Email Support\nPriority Delivery",
+          "delivery": "5-7 Business Days"
+        }
+      }
     ]
-  },
-  "presets": [{ "name": "Pricing cards" }]
+  }
 }
 {% endschema %}
